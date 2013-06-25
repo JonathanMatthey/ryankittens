@@ -1,0 +1,97 @@
+body {
+    background: #000;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+    margin:0;
+    padding:0;
+}
+
+.container{
+  width:960px;
+  margin: 0 auto;
+}
+section a{
+  display: block;
+  width:96px;
+  height:96px;
+  float:left;
+  margin:0;
+  padding:0;
+  background-size:100%;
+  opacity: 0.8;
+  -webkit-transition:opacity 200ms linear;
+  transition:opacity 200ms linear;
+  -moz-transition:opacity 200ms linear;
+  &:hover{
+    opacity: 1;
+  }
+}
+
+#middle {
+  margin: 10px 0 20px 0 ;
+  width:100%;
+  text-align: center;
+  a{
+    opacity: 1;
+    display: inline-block;
+    width:100px;
+    height:100px;
+    float:none;
+    @for $i from 4 through 7 {
+      &:nth-child(#{$i}){
+        background-image:url(../images/a#{$i%3 + 1}.jpg);
+      }
+    }
+  }
+}
+
+h1{
+  margin: 10px 0;
+  padding:0;
+  text-align: center;
+  font-size:30px;
+  width:100%;
+  text-transform: uppercase;
+}
+
+#countdown{
+  width:100%;
+  text-align: center;
+  font-size:30px;
+  font-weight:bold;
+  margin-bottom:20px ;
+}
+
+section{
+  float:left;
+}
+
+.row{
+  clear:both;
+  float:left;
+
+}
+
+section[class^="kittens"]{
+  @for $i from 1 through 30 {
+    a:nth-child(#{$i}){
+      background-image:url(http://www.placekitten.com/#{1 - $i%20 + 91}/#{$i%20 + 90});
+
+      &.dk{
+        opacity: 1!important;
+        background-image:url(../images/dk#{$i%3 + 1}.jpg);
+        width:94px;
+        height:94px;
+        border:1px solid red;
+      }
+    }
+  }
+}
+.ryan-headshot{
+  background-image:url(../images/headshot.jpg);
+  width:100px;
+  height:100px;
+  background-size:100%;
+  display: inline-block;
+}
